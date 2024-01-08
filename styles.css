@@ -19,9 +19,22 @@ body {
 .card {
     margin: 20px;
 }
+.card .card-body .card-title {
+    color: rgb(0, 0, 0); 
+}
+.card .card-body .card-title1 {
+    color: rgb(255, 0, 0); 
+}
+.card .card-body .card-title2 {
+    color: rgb(0, 255, 0); 
+}
 
 .card .card-body .card-text {
     color: black; 
+}
+
+.child-section, .adult-section {
+            display: none;
 }
 
 

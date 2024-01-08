@@ -5,17 +5,49 @@ var currentYear = new Date().getFullYear();
 document.getElementById('currentYear').innerText = currentYear;
 
 // Your existing JavaScript code
-function checkAge() {
-    var age = document.getElementById('ageInput').value;
 
-    if (age >= 18) {
-        document.getElementById('adultSection').style.display = 'block';
-        document.getElementById('childSection').style.display = 'none';
+// script.js
+
+function checkAge() {
+    var ageInput = document.getElementById("ageInput").value;
+    var errorMessage = document.getElementById("error-message");
+
+    // Check if age is not provided
+    if (ageInput === "") {
+        errorMessage.textContent = "Please enter your age.";
+        return;
+    }
+
+    // Convert ageInput to a number
+    var age = parseInt(ageInput);
+
+    // Check if the entered age is valid
+    if (isNaN(age) || age < 0) {
+        errorMessage.textContent = "Please enter a valid age.";
+        return;
+    }
+
+    // Clear any previous error messages
+    errorMessage.textContent = "";
+
+    // Perform the age check and display the appropriate section
+    if (age < 18) {
+        showChildSection();
     } else {
-        document.getElementById('childSection').style.display = 'block';
-        document.getElementById('adultSection').style.display = 'none';
+        showAdultSection();
     }
 }
+
+function showChildSection() {
+    document.getElementById("childSection").style.display = "block";
+    document.getElementById("adultSection").style.display = "none";
+}
+
+function showAdultSection() {
+    document.getElementById("childSection").style.display = "none";
+    document.getElementById("adultSection").style.display = "block";
+}
+
 
 // Add event listener to the age input for the "input" event
 document.getElementById("ageInput").addEventListener("input", function() {
