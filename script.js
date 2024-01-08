@@ -6,20 +6,15 @@ document.getElementById('currentYear').innerText = currentYear;
 
 // Your existing JavaScript code
 function checkAge() {
-    var age = document.getElementById("ageInput").value;
-    var ageCard = document.getElementById("ageCard");
-    var ageCardTitle = document.getElementById("ageCardTitle");
-    var ageCardText = document.getElementById("ageCardText");
+    var age = document.getElementById('ageInput').value;
 
     if (age >= 18) {
-        ageCardTitle.innerHTML = "You are an Adult";
-        ageCardText.innerHTML = "Congratulations! You have reached the age of majority.";
+        document.getElementById('adultSection').style.display = 'block';
+        document.getElementById('childSection').style.display = 'none';
     } else {
-        ageCardTitle.innerHTML = "You are a Child";
-        ageCardText.innerHTML = "Enjoy your childhood! Make the most of these carefree days.";
+        document.getElementById('childSection').style.display = 'block';
+        document.getElementById('adultSection').style.display = 'none';
     }
-
-    ageCard.style.display = "block";
 }
 
 // Add event listener to the age input for the "input" event
