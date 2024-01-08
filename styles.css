@@ -20,6 +20,10 @@ body {
     margin: 20px;
 }
 
+.card .card-body .card-text {
+    color: black; 
+}
+
 
 
 .footer {
